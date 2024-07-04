@@ -21,6 +21,9 @@
 
 
 module xor48(
-
+    input logic [47:0] expanded_bits, roundKey,
+    output logic [47:0] xor48Output
     );
+
+    
 endmodule

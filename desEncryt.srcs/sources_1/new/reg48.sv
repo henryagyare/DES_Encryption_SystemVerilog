@@ -21,6 +21,16 @@
 
 
 module reg48(
-
+    input logic clk, reg32Load,
+    input logic [31:0] reg32Input,
+    output logic [31:0] reg32Output
     );
+    
+    
+    always_ff @(posedge clk)
+    begin
+        if (reg32Load == 1'b1)      
+            reg32Output <= reg32Input;
+    end    
 endmodule
+
