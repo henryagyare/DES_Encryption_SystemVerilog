@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/02/2024 10:34:27 PM
+// Create Date: 07/02/2024 10:26:10 PM
 // Design Name: 
-// Module Name: reg48
+// Module Name: sbox3
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module reg48(
-    input logic clk, reg32Load,
-    input logic [31:0] reg32Input,
-    output logic [31:0] reg32Output
-    );
-    
-    
-    always_ff @(posedge clk)
-    begin
-        if (reg32Load == 1'b1)      
-            reg32Output <= reg32Input;
-    end    
-endmodule
+module sbox3(
 
+    );
+endmodule
