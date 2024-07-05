@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/02/2024 10:34:27 PM
+// Create Date: 07/02/2024 10:13:58 PM
 // Design Name: 
-// Module Name: reg48
+// Module Name: triState
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module reg48(
-    input logic clk, reg48Load,
-    input logic [47:0] reg48Input,
-    output logic [47:0] reg48Output
+module output_triState_buffer(
+    input logic bufferSignal,
+    input logic [63:0] cocncat_ciphertext,
+    output logic [63:0] ciphertext
     );
     
-    
-    always_ff @(posedge clk)
+    always_comb
     begin
-        if (reg48Load == 1'b1)      
-            reg48Output <= reg48Input;
-    end    
+        case (bufferSignal)
+            1'b1: ciphertext = cocncat_ciphertext;
+            default: ciphertext = 64'bz;
+        endcase
+    end
+    
 endmodule
-

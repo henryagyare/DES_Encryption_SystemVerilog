@@ -21,6 +21,8 @@
 
 
 module xor32(
-
+    input logic [31:0] permutationOutput, leftHalf,
+    output logic [31:0] xor32Output
     );
+    assign xor32Output = (~permutationOutput & leftHalf) | (permutationOutput & ~leftHalf);
 endmodule

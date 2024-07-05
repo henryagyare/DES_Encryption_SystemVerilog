@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/02/2024 10:34:27 PM
+// Create Date: 07/05/2024 10:52:50 PM
 // Design Name: 
-// Module Name: reg48
+// Module Name: permutationChoice2
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module reg48(
-    input logic clk, reg48Load,
-    input logic [47:0] reg48Input,
-    output logic [47:0] reg48Output
+module permutationChoice2(
+    input logic [55:0] pc2Input,
+    output logic [47:0] pc2Output
     );
-    
-    
-    always_ff @(posedge clk)
-    begin
-        if (reg48Load == 1'b1)      
-            reg48Output <= reg48Input;
-    end    
 endmodule
-

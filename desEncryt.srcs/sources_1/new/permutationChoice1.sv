@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/02/2024 10:13:58 PM
+// Create Date: 07/05/2024 10:52:50 PM
 // Design Name: 
-// Module Name: triState
+// Module Name: permutationChoice1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module triState(
-    input logic bufferSignal,
-    input logic [31:0] bufferInput,
-    output logic [31:0] bufferOutput
+module permutationChoice1(
+    input logic [63:0] pc1Input,
+    output logic [55:0] pc1Output
     );
-    
-    always_comb
-    begin
-        case (bufferSignal)
-            1'b1: bufferOutput = bufferInput;
-            default: bufferOutput = 32'bz;
-        endcase
-    end
-    
+
 endmodule
