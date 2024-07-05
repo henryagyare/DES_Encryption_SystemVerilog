@@ -22,15 +22,15 @@
 
 module triState(
     input logic bufferSignal,
-    input logic [31:0] bufferInput,
-    output logic [31:0] bufferOutput
+    input logic [63:0] cocncat_ciphertext,
+    output logic [63:0] ciphertext
     );
     
     always_comb
     begin
         case (bufferSignal)
-            1'b1: bufferOutput = bufferInput;
-            default: bufferOutput = 32'bz;
+            1'b1: ciphertext = cocncat_ciphertext;
+            default: ciphertext = 64'bz;
         endcase
     end
     

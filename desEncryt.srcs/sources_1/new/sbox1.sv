@@ -21,8 +21,8 @@
 
 
 module sbox1(
-    input logic X,
-    output logic s_box1
+    input logic [5:0] X,
+    output logic [3:0] s_box1
     );
 
 assign s_box1 =(X == 6'b0_0000_0) ? 4'd14 : 
