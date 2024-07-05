@@ -1186,3 +1186,6 @@ selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "inversePermutation.sv", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
 // WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5197 ms. Increasing delay to 15591 ms.
 // WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 28 ms. Decreasing delay to 2028 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  20598130 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,898 MB. GUI used memory: 95 MB. Current time: 7/5/24, 9:53:23 PM UTC
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 20603843 ms. Increasing delay to 61811529 ms.

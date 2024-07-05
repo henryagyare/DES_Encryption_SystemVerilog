@@ -47,6 +47,8 @@ set rt::rc [catch {
       {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/inversePermutation.sv}
       {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/keyAlgorithm.sv}
       {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/output_triState_buffer.sv}
+      {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationChoice1.sv}
+      {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationChoice2.sv}
       {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationTable.sv}
       {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/reg32.sv}
       {E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/reg48.sv}
