@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module triState(
+module output_triState_buffer(
     input logic bufferSignal,
     input logic [63:0] cocncat_ciphertext,
     output logic [63:0] ciphertext

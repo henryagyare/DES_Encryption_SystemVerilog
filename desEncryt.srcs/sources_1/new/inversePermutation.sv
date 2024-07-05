@@ -21,6 +21,11 @@
 
 
 module inversePermutation(
-
+    input logic [31:0] inversePerm_leftInput, inversePerm_rightInput,
+    output logic [63:0] inversePerm_output
     );
+    
+    logic [63:0] combinedInput;
+    assign combinedInput = {inversePerm_leftInput, inversePerm_rightInput};
+
 endmodule

@@ -21,6 +21,7 @@
 
 
 module permutationTable(
-
+    input logic [31:0] p_table_input,
+    output logic [31:0] p_table_output
     );
 endmodule

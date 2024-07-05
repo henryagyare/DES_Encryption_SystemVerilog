@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/02/2024 10:34:27 PM
+// Create Date: 07/05/2024 02:28:31 PM
 // Design Name: 
-// Module Name: reg48
+// Module Name: keyAlgorithm
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module reg48(
-    input logic clk, reg48Load,
-    input logic [47:0] reg48Input,
-    output logic [47:0] reg48Output
+module keyAlgorithm(
+    input logic [63:0] keyInput,
+    output logic [47:0] keyOutput
     );
-    
-    
-    always_ff @(posedge clk)
-    begin
-        if (reg48Load == 1'b1)      
-            reg48Output <= reg48Input;
-    end    
-endmodule
 
+endmodule
