@@ -2507,3 +2507,69 @@ selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL An
 // Elapsed Time for: 'L.f': 24h:34m:31s
 // Elapsed time: 52 seconds
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "desEncrypt.sv", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 228 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // D (PAResourceOtoP.PAViews_BASE_WORKSPACE, PlanAheadTabBaseWorkspace)
+// Elapsed time: 98 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "unselect_objects"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// Elapsed time: 18 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "unselect_objects"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets roundN_leftHalf]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// Elapsed time: 282 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "desEncrypt.sv", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g (PAResourceAtoD.AbstractFileView_RELOAD)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 13, true, false, false, false, true, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN, "Reload Design"); // ao (PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN, reload_rtl_design_menu)
+// Run Command: PAResourceCommand.PACommandNames_RELOAD_RTL_DESIGN
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: refresh_design 
+// TclEventType: ELABORATE_START
+// TclEventType: MSGMGR_REFRESH_MSG
+// Tcl Message: INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes. 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 3841.281 ; gain = 0.000 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'desEncrypt' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/desEncrypt.sv:23] INFO: [Synth 8-6157] synthesizing module 'keyAlgorithm' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/keyAlgorithm.sv:23] INFO: [Synth 8-6157] synthesizing module 'permutationChoice1' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationChoice1.sv:23] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'permutationChoice1' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationChoice1.sv:23] INFO: [Synth 8-6157] synthesizing module 'left_circular_shift' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/left_circular_shift.sv:23] INFO: [Synth 8-6155] done synthesizing module 'left_circular_shift' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/left_circular_shift.sv:23] INFO: [Synth 8-6157] synthesizing module 'permutationChoice2' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationChoice2.sv:23] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'permutationChoice2' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationChoice2.sv:23] INFO: [Synth 8-6157] synthesizing module 'reg48' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/reg48.sv:23] INFO: [Synth 8-6155] done synthesizing module 'reg48' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/reg48.sv:23] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'permutationTable' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationTable.sv:23] INFO: [Synth 8-6155] done synthesizing module 'permutationTable' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/permutationTable.sv:23] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'xor32' [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/xor32.sv:23] INFO: [Synth 8-6155] done synthesizing module 'xor32' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/xor32.sv:23] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'desEncrypt' (0#1) [E:/Final Year Project/vivadoProjects/desEncryt/desEncryt.srcs/sources_1/new/desEncrypt.sv:23] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 3841.281 ; gain = 0.000 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3841.281 ; gain = 0.000 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3841.281 ; gain = 0.000 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// Engine heap size: 1,898 MB. GUI used memory: 100 MB. Current time: 7/6/24, 2:56:18 PM UTC
+// HMemoryUtils.trashcanNow. Engine heap size: 1,898 MB. GUI used memory: 103 MB. Current time: 7/6/24, 2:56:18 PM UTC
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,898 MB. GUI used memory: 118 MB. Current time: 7/6/24, 2:56:22 PM UTC
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgdAndInitRouteStorage elapsed time: 2.8s
+// WARNING: HEventQueue.dispatchEvent() is taking  3846 ms.
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 3841.281 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 3841.281 ; gain = 0.000 
+// Elapsed Time for: 'aa': 40s
+// 'd' command handler elapsed time: 43 seconds
+// Elapsed time: 40 seconds
+dismissDialog("Reloading"); // bq (Reloading Progress)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'L.f': 24h:46m:55s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 24h:47m:03s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed Time for: 'L.f': 24h:47m:11s
+// Elapsed Time for: 'L.f': 24h:47m:27s
