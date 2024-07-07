@@ -21,6 +21,8 @@
 
 
 module left_circular_shift(
-
+    input logic [27:0] LCS_input,
+    output logic [27:0] LCS_output
     );
+
 endmodule

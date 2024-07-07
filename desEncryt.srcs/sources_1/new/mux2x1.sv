@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/05/2024 11:40:15 PM
+// Create Date: 07/06/2024 11:52:25 AM
 // Design Name: 
-// Module Name: reg28
+// Module Name: mux2x1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module reg28(
-    input logic clk, reg28Load,
-    input logic [27:0] reg28Input,
-    output logic [27:0] reg28Output
+module mux2x1(
+    input logic sel,
+    input logic [27:0] I0, I1,
+    output logic [27:0] mux2x1_output
     );
 
-    always_ff @( clk ) 
-    begin
-        if (reg28Load == 1'b1)
-            reg28Output <= reg28Input;        
+    always_comb
+    begin 
+        case (sel)
+            1'b0: mux2x1_output = I0;
+            default: mux2x1_output = I1;
+        endcase
     end
-        
 
 endmodule
+

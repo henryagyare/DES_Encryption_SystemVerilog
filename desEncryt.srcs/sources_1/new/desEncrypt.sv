@@ -21,9 +21,11 @@
 
 
 module desEncrypt(
-    input logic [63:0] plaintext,
+    // input logic [63:0] plaintext,
+    input logic [31:0] right_previous, left_previous,
     input logic [63:0] desKeyInput,
-    output logic [63:0] ciphertext
+    // output logic [63:0] ciphertext
+    output logic [31:0] roundN_rightHalf, roundN_leftHalf
     );
     
     logic [47:0] generated_key;
@@ -32,11 +34,11 @@ module desEncrypt(
         .keyOutput (generated_key)
     );
 
-    logic [63:0] initial_permutation_output;
-    initialPermutation initial_permutation(
-        .plaintext (plaintext),
-        .initialPerm (initial_permutation_output)
-    );
+    // logic [63:0] initial_permutation_output;
+    // initialPermutation initial_permutation(
+    //     .plaintext (plaintext),
+    //     .initialPerm (initial_permutation_output)
+    // );
 
     // logic [32:0] left_mux_output;
     // mux_4x1 left_mux4x1 (
@@ -48,21 +50,10 @@ module desEncrypt(
 
     // );
 
-    logic [32:0] left_reg32_output;
-    reg32 left_reg32 (
-        .reg32Input (initial_permutation_output[63:32]),
-        .reg32Output (left_reg32_output)
-    );
-
-    logic [32:0] right_reg32_output;
-    reg32 right_reg32 (
-        .reg32Input (initial_permutation_output[31:0]),
-        .reg32Output (right_reg32_output)
-    );
-
     logic [47:0] expansion_output;
     expand32to48 expand32to48 (
-        .right_half (right_reg32_output),
+        // .right_half (right_reg32_output),
+        .right_half (right_previous),
         .expantable (expansion_output)
     );
     
@@ -73,15 +64,16 @@ module desEncrypt(
         .xor48Output (xor48_output)
     );
 
-    logic [47:0] reg48_output;
-    reg48 reg48 (
-        .reg48Input (xor48_output),
-        .reg48Output (reg48_output)
-    );
+    // logic [47:0] reg48_output;
+    // reg48 reg48 (
+    //     .reg48Input (xor48_output),
+    //     .reg48Output (reg48_output)
+    // );
 
     logic [32:0] sbox_combine_output;
     S_Box_Combine S_Box_Combine (
-        .sboxInput (reg48_output),
+        // .sboxInput (reg48_output),
+        .sboxInput (xor48_output),
         .sboxOutput (sbox_combine_output)
     );
 
@@ -92,26 +84,48 @@ module desEncrypt(
 
     );
 
-    logic [32:0] xor32_output;
+    logic [31:0] xor32_output;
     xor32 xor32 (
         .permutationOutput (permutation_table_output),
-        .leftHalf (left_reg32_output),
+        .leftHalf (left_previous),
         .xor32Output (xor32_output)
     );
 
-    logic [63:0] inverse_permutation_output;
-    inversePermutation inverse_permutation(
-        .inversePerm_leftInput (left_reg32_output),
-        .inversePerm_rightInput (xor32_output),
-        .inversePerm_output (inverse_permutation_output)
-    );
+    logic [31:0] roundN_rightHalf;
+    logic [31:0] roundN_leftHalf;
+    assign roundN_rightHalf = xor32_output;
+    assign roundN_leftHalf = right_previous;
 
-    logic [63:0] roundN_ciphertext;
-    output_triState_buffer output_triState_buffer (
-        .cocncat_ciphertext (inverse_permutation_output),
-        .ciphertext (roundN_ciphertext)
-    );
 
-    assign ciphertext = roundN_ciphertext;
+    // logic [63:0] roundN_ciphertext;
+    // logic [32:0] left_reg32_output;
+    // reg32 left_reg32 (
+    //     .reg32Input (initial_permutation_output[63:32]),
+    //     .reg32Output (left_reg32_output)
+    // );
+
+    // logic [32:0] right_reg32_output;
+    // reg32 right_reg32 (
+    //     .reg32Input (xor32_output),
+    //     .reg32Output (right_reg32_output)
+    // );
+
+
+    // We only need inverse_permutation in the last round
+    // logic [63:0] inverse_permutation_output;
+    // inversePermutation inverse_permutation(
+    //     .inversePerm_leftInput (left_reg32_output),
+    //     .inversePerm_rightInput (xor32_output),
+    //     .inversePerm_output (inverse_permutation_output)
+    // );
+
+    // logic [63:0] roundN_ciphertext;
+    // output_triState_buffer output_triState_buffer (
+    //     .cocncat_ciphertext (inverse_permutation_output),
+    //     .ciphertext (roundN_ciphertext)
+    // );
+
+    // assign ciphertext = roundN_ciphertext;
+
 
 endmodule
